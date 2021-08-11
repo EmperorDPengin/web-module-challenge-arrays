@@ -94,8 +94,8 @@ Use the addFlavor function below to do the following:
 
 function addFlavor(array, string){
 
-  const newFlavorList = array;
-  // const newFlavorList = copy(array);  //This will create a new Array without modifying the original & add a new item
+  // const newFlavorList = array;
+  const newFlavorList = copy(array);  //This will create a new Array without modifying the original & add a new item
   newFlavorList.unshift(string);
 
   return newFlavorList;
@@ -117,7 +117,7 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(array){
- const curatedList = array;
+ const curatedList = copy(array);
  curatedList.pop();
  return curatedList;
 }
@@ -159,7 +159,7 @@ Use the removeFlavorByName function below to do the following:
 */
 
 function removeFlavorByName(array, falvorName){
-  const newFlavorList = array;
+  const newFlavorList = copy(array);
 
   for(let i = 0; i < newFlavorList.length; i++){
     if(newFlavorList[i] === falvorName){
@@ -207,6 +207,7 @@ function filterByWord(array, string){
 console.log('TASK 7', filterByWord(originalFlavors, 'Chocolate'));
 
 
+
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
@@ -219,9 +220,23 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(array){
+  let average = 0;
+  let wordCount = 0;
+
+  for(let item in array){
+    // console.log(array[item]);
+    let wordCountArray = array[item].split(" ");
+    wordCount = wordCount + wordCountArray.length;
+    // console.log(wordCountArray.length+" "+average);
+  }
+  // console.log("word count is "+ wordCount +" Array Lenght is "+ array.length);
+  average = (wordCount/array.length);
+  // console.log(wordCount + " Divided by " + array.length + " Gives us an Average of "+ average);
+  return average;
 }
+
+console.log(getAverageWordLength(originalFlavors));
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
