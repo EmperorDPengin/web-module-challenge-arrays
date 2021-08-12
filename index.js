@@ -225,14 +225,10 @@ function getAverageWordLength(array){
   let wordCount = 0;
 
   for(let item in array){
-    // console.log(array[item]);
     let wordCountArray = array[item].split(" ");
     wordCount = wordCount + wordCountArray.length;
-    // console.log(wordCountArray.length+" "+average);
   }
-  // console.log("word count is "+ wordCount +" Array Lenght is "+ array.length);
   average = (wordCount/array.length);
-  // console.log(wordCount + " Divided by " + array.length + " Gives us an Average of "+ average);
   return average;
 }
 
@@ -252,91 +248,142 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-  /*code here*/
-}
+
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
-// const newFlavors = [
-//   "Date night",
-//   "U.S.S Butterscotch (Stranger Things special)",
-//   "Honey Almond",
-//   "Mint Chocolate Chip",
-//   "Chocolate",
-//   "Oreo® Cookies'n Cream",
-//   "Chocolate Chip",
-//   "Pralines 'n Cream",
-//   "Very Berry Strawberry",
-//   "Chocolate Chip Cookie Dough",
-//   "Old Fashioned Butter Pecan",
-//   "Jamoca®",
-//   "Jamoca® Almond Fudge",
-//   "Reese's® Peanut Butter Cup",
-//   "Rocky Road",
-//   "Peanut Butter ’n Chocolate",
-//   "Gold Medal Ribbon®",
-//   "World Class® Chocolate",
-//   "Cherries Jubilee",
-//   "Chocolate Fudge",
-//   "Daiquiri Ice",
-//   "Rainbow Sherbet",
-//   "Rainbow Swirl"
-// ] 
+const newFlavors = [
+  "Date night",
+  "U.S.S Butterscotch (Stranger Things special)",
+  "Honey Almond",
+  "Mint Chocolate Chip",
+  "Chocolate",
+  "Oreo® Cookies'n Cream",
+  "Chocolate Chip",
+  "Pralines 'n Cream",
+  "Very Berry Strawberry",
+  "Chocolate Chip Cookie Dough",
+  "Old Fashioned Butter Pecan",
+  "Jamoca®",
+  "Jamoca® Almond Fudge",
+  "Reese's® Peanut Butter Cup",
+  "Rocky Road",
+  "Peanut Butter ’n Chocolate",
+  "Gold Medal Ribbon®",
+  "World Class® Chocolate",
+  "Cherries Jubilee",
+  "Chocolate Fudge",
+  "Daiquiri Ice",
+  "Rainbow Sherbet",
+  "Rainbow Swirl"
+] 
 
-// const seasonalFlavors = [
-//   "America's Birthday Cake",
-//   "Baseball Nut®",
-//   "Blueberry Cheesecake",
-//   "Bourbon Street Pecan Pie",
-//   "Brownie Bar Mashup",
-//   "Cherry Cordial with Kisses",
-//   "Chocolate Mousse Royale",
-//   "French Vanilla",
-//   "Eggnog",
-//   "German Chocolate Cake",
-//   "Icing on the Cake",
-//   "Love Potion #31",
-//   "New York Cheesecake",
-//   "Nutty Coconut",
-//   "Peppermint",
-//   "Strawberry Cheesecake",
-//   "Rock ’n Pop Swirl",
-//   "Reese’s Peanut Butter Cup",
-//   "Trick Oreo Treat",
-//   "Winter White Chocolate",
-//   "made with Snickers®",
-//   "made with M&M's®",
-//   "Heath®",
-//   "Mango Tango"
-// ]
+const seasonalFlavors = [
+  "America's Birthday Cake",
+  "Baseball Nut®",
+  "Blueberry Cheesecake",
+  "Bourbon Street Pecan Pie",
+  "Brownie Bar Mashup",
+  "Cherry Cordial with Kisses",
+  "Chocolate Mousse Royale",
+  "French Vanilla",
+  "Eggnog",
+  "German Chocolate Cake",
+  "Icing on the Cake",
+  "Love Potion #31",
+  "New York Cheesecake",
+  "Nutty Coconut",
+  "Peppermint",
+  "Strawberry Cheesecake",
+  "Rock ’n Pop Swirl",
+  "Reese’s Peanut Butter Cup",
+  "Trick Oreo Treat",
+  "Winter White Chocolate",
+  "made with Snickers®",
+  "made with M&M's®",
+  "Heath®",
+  "Mango Tango"
+]
 
-// const regionalFlavors = [
-//   "Pink Bubblegum",
-//   "Caramel Macchiato",
-//   "York Peppermint Pattie",
-//   "Cotton Candy",
-//   "Orange Sherbet",
-//   "Grape Ice",
-//   "Watermelon Ice",
-//   "Miami Vice Sorbet",
-//   "Splish Splash®",
-//   "Wild 'n Reckless Sherbet",
-//   "Lemon Custard",
-//   "Oregon Blackberry",
-//   "Bananas ‘n Strawberries",
-//   "Mississippi Mud",
-//   "Rum Raisin",
-//   "Creole Cream Cheese",
-//   "Chocolate Almond",
-//   "Fudge Brownie",
-//   "Banana Nut",
-//   "Black Walnut",
-//   "Cotton Candy Crackle",
-//   "Quarterback Crunch",
-//   "Chocolate Chocolate Chip Cheesecake",
-//   "Caramel 'n' Cookies"
-// ]
+const regionalFlavors = [
+  "Pink Bubblegum",
+  "Caramel Macchiato",
+  "York Peppermint Pattie",
+  "Cotton Candy",
+  "Orange Sherbet",
+  "Grape Ice",
+  "Watermelon Ice",
+  "Miami Vice Sorbet",
+  "Splish Splash®",
+  "Wild 'n Reckless Sherbet",
+  "Lemon Custard",
+  "Oregon Blackberry",
+  "Bananas ‘n Strawberries",
+  "Mississippi Mud",
+  "Rum Raisin",
+  "Creole Cream Cheese",
+  "Chocolate Almond",
+  "Fudge Brownie",
+  "Banana Nut",
+  "Black Walnut",
+  "Cotton Candy Crackle",
+  "Quarterback Crunch",
+  "Chocolate Chocolate Chip Cheesecake",
+  "Caramel 'n' Cookies"
+]
 
+function getRandomFlavors(arrays){
+  let randomList;
+  let randomNumber;
+  let randomFlavor;
+  let newFlavors = [];
+
+  console.log(newFlavors.length);
+
+  while(newFlavors.length < 31){
+    randomList = Math.floor(Math.random() * arrays.length);
+    randomNumber = Math.floor(Math.random() * arrays[randomList].length);
+    randomFlavor = arrays[randomList][randomNumber];
+
+    console.log("Added " + randomFlavor + " From " + randomList , randomNumber);
+    if(newFlavors.length < 1){
+      newFlavors.unshift(randomFlavor);
+      continue;
+    }
+
+    if(newFlavors.indexOf(randomFlavor) === -1){
+        newFlavors.unshift(randomFlavor);
+    }
+    // for(let flavors in newFlavors){
+    //   if(newFlavors[flavors] === randomFlavor){
+    //     break;
+    //   }
+    // }
+    console.log(newFlavors.length + " IS");
+  }
+
+  // while(newFlavors.length < 32){
+  //   // console.log(newFlavors.length);
+  //   randomList = Math.floor(Math.random()* arrays.length);
+  //   randomNumber = Math.floor(Math.random()* arrays[randomList].length);
+  //   randomFlavor = arrays[randomList][randomNumber];
+    
+  //   if(newFlavors.length <= 1){
+  //     newFlavors.unshift(randomFlavor);
+  //   }else{
+  //     for(let items in newFlavors){
+  //       if(newFlavors[items] !== randomFlavor){
+  //         newFlavors.unshift(randomFlavor);
+  //       }
+  //       console.log(newFlavors[items]);
+  //       console.log(newFlavors.length);
+  //     }
+  //   }
+  // }
+  
+ return newFlavors;
+}
+
+console.log(getRandomFlavors([originalFlavors, newFlavors, seasonalFlavors, regionalFlavors]));
 
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
@@ -356,5 +403,5 @@ module.exports = {
   filterByWord,
   getAverageWordLength,
   getRandomFlavors
-}
+};
 
